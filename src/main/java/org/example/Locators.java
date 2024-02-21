@@ -3,13 +3,12 @@ package org.example;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
 
 import java.time.Duration;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
+public class Locators {
     public static void main(String[] args) {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
@@ -32,10 +31,10 @@ public class Main {
         //driver.close();
 
        // Locators
+        driver.findElement(By.id("inputUsername")).sendKeys("Vinnee");
+        driver.findElement(By.name("inputPassword")).sendKeys("ABC");
+        driver.findElement(By.className("signInBtn")).click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-       driver.findElement(By.id("inputUsername")).sendKeys("Vinnee");
-       driver.findElement(By.name("inputPassword")).sendKeys("ABC");
-       driver.findElement(By.className("signInBtn")).click();
        System.out.println(driver.findElement(By.cssSelector("p.error")).getText());
        driver.findElement(By.linkText("Forgot your password?")).click();
        driver.findElement(By.xpath("//input[@placeholder='Name']")).sendKeys("Vinnee");
@@ -47,5 +46,14 @@ public class Main {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5000));
         driver.findElement(By.cssSelector(".reset-pwd-btn")).click();
         System.out.println(driver.findElement(By.cssSelector("form p")).getText());
-        driver.quit();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5000));
+        driver.findElement(By.cssSelector(".go-to-login-btn")).click();
+        //Entered Correct Username and Password
+        driver.findElement(By.cssSelector("#inputUsername")).sendKeys("Vinnee");
+        driver.findElement(By.cssSelector("input[type*='pass']")).sendKeys("rahulshettyacademy");
+        //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5000));
+        //driver.findElement(By.id("chkboxOne")).click();
+        //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5000));
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
+       // driver.quit();
        }}
