@@ -3,12 +3,15 @@ package org.example;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.Assert;
 
 public class Locators2 {
     public static void main (String[] args) throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "C:/Users/vanita_patil/Downloads/chromedriver-win64/chromedriver-win64/chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
+       // System.setProperty("webdriver.chrome.driver", "C:/Users/vanita_patil/Downloads/chromedriver-win64/chromedriver-win64/chromedriver.exe");
+       // WebDriver driver = new ChromeDriver();
+        System.setProperty("webdriver.edge.driver", "C:/Users/vanita_patil/Edgedriver/edgedriver_win64/msedgedriver.exe");
+        WebDriver driver = new EdgeDriver();
         String Password = getPassword(driver);
         driver.get("https://rahulshettyacademy.com/locatorspractice/");
         driver.manage().window().maximize();
