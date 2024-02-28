@@ -13,6 +13,6 @@ public class WidowsActivities {
         driver.navigate().back();
         driver.navigate().forward();
         //driver.manage().window().fullscreen();
-
+        driver.close();
     }
 }
